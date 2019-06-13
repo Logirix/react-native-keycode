@@ -23,7 +23,8 @@ export class KeycodeInput extends Component {
     numeric: PropTypes.bool,
     value: PropTypes.string,
     style: PropTypes.any,
-    inputRef: PropTypes.func
+    inputRef: PropTypes.func,
+    textInputStyle: PropTypes.any
   }
 
   static defaultProps = {
@@ -126,7 +127,7 @@ export class KeycodeInput extends Component {
               this.props.inputRef(component)
             }
           }}
-          style={styles.input}
+          style={[styles.input, this.props.textInputStyle]}
           autoFocus={this.props.autoFocus}
           autoCorrect={false}
           autoCapitalize='characters'
