@@ -24,7 +24,8 @@ export class KeycodeInput extends Component {
     value: PropTypes.string,
     style: PropTypes.any,
     inputRef: PropTypes.func,
-    textInputStyle: PropTypes.any
+    textInputStyle: PropTypes.any,
+    textInputProps: PropTypes.any
   }
 
   static defaultProps = {
@@ -141,7 +142,9 @@ export class KeycodeInput extends Component {
           returnKeyType='go'
           underlineColorAndroid='transparent'
           onChangeText={(text) => this._changeText(text)}
-          caretHidden/>
+          caretHidden
+          {...this.props.textInputProps}
+          />
 
         {this._renderBoxes()}
       </View>
