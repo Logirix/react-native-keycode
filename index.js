@@ -55,11 +55,11 @@ export class KeycodeInput extends Component {
       await this._setValue(nextProps.value)
     }
 
-    if (this.state.value.length < this.props.length) {
-      this.props.autoFocus && this.input.focus()
-    } else {
-      this.input.blur()
-    }
+    // if (this.state.value.length < this.props.length) {
+    //   this.props.autoFocus && this.input.focus()
+    // } else {
+    //   this.input.blur()
+    // }
   }
 
   _setValue (value) {
@@ -84,9 +84,9 @@ export class KeycodeInput extends Component {
       return
     }
 
-    if (this.input) {
-      this.input.blur()
-    }
+    // if (this.input) {
+    //   this.input.blur()
+    // }
 
     if (this.props.onComplete) {
       setTimeout(() => {
@@ -136,13 +136,11 @@ export class KeycodeInput extends Component {
           blurOnSubmit={false}
           keyboardType={keyboardType}
           maxLength={this.props.length}
-          disableFullscreenUI
           clearButtonMode='never'
           spellCheck={false}
           returnKeyType='go'
           underlineColorAndroid='transparent'
           onChangeText={(text) => this._changeText(text)}
-          caretHidden
           {...this.props.textInputProps}
           />
 
